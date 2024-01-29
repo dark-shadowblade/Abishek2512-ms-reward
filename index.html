@@ -58,7 +58,7 @@
 
         .frame {
             width: 2000px;
-            height: 100px;
+            height: 58px;
             border: none;      
         }
   
@@ -181,8 +181,7 @@
     animation: throbbing 1s linear 0s 140;
 }
 
-   
-.floating-box {
+  .floating-box {
   position: absolute;
   top: 0; /* Set to top */
   left: 50%; /* Center horizontally */
@@ -191,7 +190,7 @@
   color: white;
   padding: 20px; /* Adjust padding if needed */
   cursor: move;
-  width: 2000px; /* Set your desired width */
+  width: 1340px; /* Set your desired width */
   height: 400px; /* Set your desired height */
 }
 
@@ -204,7 +203,7 @@
 <body>
     <button onclick="openLink('https://rewards.bing.com')">REWARDS</button>
     <button onclick="openLink('https://rewards.bing.com/status')">STATUS</button>
-    <button onclick="openLinkSameWindow('https://dark-shadowblade.github.io/MSEdgeSearchClickerabhishek/')">Re-Start</button>
+    <button onclick="openLinkSameWindow('https://dark-shadowblade.github.io/Abishek2512-ms-reward/')">NEW</button>
 
     <div class="circle">
         <div id="searchCount">0</div>
@@ -396,7 +395,7 @@
            var rn =Math.floor(Math.random() * randomPlaces.length);
            var rp = randomPlaces[rn];
           
-           var rn2 =Math.floor(Math.random() * randomPlaces.length);
+          var rn2 =Math.floor(Math.random() * randomPlaces.length);
            var rp2 = randomPlaces[rn2];
           
             document.getElementById('bingFrame').src = "https://www.bing.com/search?q=" + encodeURIComponent(randompoint) +  " " +encodeURIComponent(rp) +" "+ encodeURIComponent(rp2)+ "&qs=n&form=QBRE&sp=-1&lq=1&pq=dwadawbnbwacccwadaa&sc=0-19&sk=&cvid=D8949155E22D4611BA00FA1AB65BBF4B&ghsh=0&ghacc=0&ghpl=";
@@ -417,9 +416,16 @@
     intervalId = setInterval(generateRandomNumber, 7000);
     generateRandomNumber();
 
+  
+
+// Call the function to check and open the website
+checkAndOpenWebsite();
+
+  
     
 </script>
-  <div class="floating-box" id="movableBox"></div>
+  
+    <div class="floating-box" id="movableBox"></div>
 <script>
   const box = document.getElementById('movableBox');
   let isDragging = false;
@@ -448,7 +454,6 @@
     box.style.opacity = 1;
   });
 </script>
-    
 
 </body>
 
