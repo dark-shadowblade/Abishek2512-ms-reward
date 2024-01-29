@@ -181,6 +181,21 @@
     animation: throbbing 1s linear 0s 140;
 }
 
+   
+.floating-box {
+  position: absolute;
+  top: 0; /* Set to top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  background-color: black;
+  color: white;
+  padding: 20px; /* Adjust padding if needed */
+  cursor: move;
+  width: 400px; /* Set your desired width */
+  height: 400px; /* Set your desired height */
+}
+
+
   
   
     </style>
@@ -404,6 +419,36 @@
 
     
 </script>
+  <div class="floating-box" id="movableBox"></div>
+<script>
+  const box = document.getElementById('movableBox');
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  box.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    offsetX = e.touches[0].clientX - box.getBoundingClientRect().left;
+    offsetY = e.touches[0].clientY - box.getBoundingClientRect().top;
+
+    // Make the box transparent on touch start
+    box.style.opacity = 0.5;
+  });
+
+  document.addEventListener('touchmove', (e) => {
+    if (isDragging) {
+      box.style.left = e.touches[0].clientX - offsetX + 'px';
+      box.style.top = e.touches[0].clientY - offsetY + 'px';
+    }
+  });
+
+  document.addEventListener('touchend', () => {
+    isDragging = false;
+
+    // Restore the box's opacity on touch end
+    box.style.opacity = 1;
+  });
+</script>
+    
 
 </body>
 
